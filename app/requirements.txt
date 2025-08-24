@@ -1,0 +1,4 @@
+flask
+Redis
+pydantic
+gunicorn

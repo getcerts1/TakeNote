@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  app:
+    image: takenote
+    container_name: app
+    ports:
+      - "8080:5000"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
