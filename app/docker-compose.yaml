@@ -2,15 +2,34 @@ version: "3.9"
 
 services:
   app:
-    image: takenote
+    image: takenote:latest
     container_name: app
     ports:
       - "8080:5000"
     depends_on:
       - redis
+      - db
 
   redis:
     image: redis:latest
     container_name: redis
+    restart: always
     ports:
       - "6379:6379"
+
+  db:
+    image: my-postgres:1.0
+    container_name: postgres_server
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+
+volumes:
+  pg-data:

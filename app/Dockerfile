@@ -3,6 +3,7 @@ FROM python:3.13-alpine
 # Install dependencies
 RUN apk update && apk upgrade && apk add --no-cache gcc musl-dev linux-headers
 
+
 WORKDIR /opt
 
 COPY requirements.txt .
