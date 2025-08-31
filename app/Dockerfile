@@ -1,17 +1,17 @@
-FROM python:3.13-alpine
+FROM python:3.13-slim
 
 # Install dependencies
-RUN apk update && apk upgrade && apk add --no-cache gcc musl-dev linux-headers
+RUN apt-get update && apt-get install -y libpq-dev gcc && rm -rf /var/lib/apt/lists/*
 
 
 WORKDIR /opt
 
-COPY requirements.txt .
+COPY app/requirements.txt .
 
 #Install Python dependencies removing pip wheels
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY app/ .
 
 EXPOSE 5000
 

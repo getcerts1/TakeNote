@@ -1,0 +1,47 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f8f1e5;
+    color: #4b3832;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff8f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #6f4e37;
+}
+
+input, textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #c8ad7f;
+    font-size: 1rem;
+}
+
+button {
+    background: #a97458;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background: #8b5e3c;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}

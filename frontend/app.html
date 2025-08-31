@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="app-styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="App Logo" class="logo">
+        <button onclick="logout()">Log Out</button>
+        <h1>My Notes</h1>
+
+        <!-- Create Note -->
+        <textarea id="note-value" placeholder="Write your note..."></textarea>
+        <input type="text" id="note-name" placeholder="Note name">
+        <select id="note-expiration">
+            <option value="300">5 min</option>
+            <option value="600">10 min</option>
+            <option value="1200">20 min</option>
+            <option value="1800">30 min</option>
+            <option value="3600">1 hour</option>
+        </select>
+        <button onclick="createNote()">Save Note</button>
+
+        <hr>
+
+        <!-- Retrieve Note -->
+        <input type="text" id="fetch-note-name" placeholder="Enter note name to fetch">
+        <button onclick="getNote()">Get Note</button>
+
+        <div id="note-result"></div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

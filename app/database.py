@@ -3,7 +3,7 @@ import psycopg
 
 
 
-r = Redis(host="localhost", port=6379, decode_responses=True)
+r = Redis(host="redis", port=6379, decode_responses=True)
 
 def connect(config):
     """ Connect to the PostgreSQL database server """

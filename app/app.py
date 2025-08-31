@@ -10,6 +10,9 @@ from flask_jwt_extended import create_access_token, get_jwt_identity, get_jwt, J
 from config import load_config
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
+from flask_cors import CORS
+
+
 
 
 load_dotenv()
@@ -17,9 +20,10 @@ load_dotenv()
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 jwt = JWTManager(app)
+CORS(app)
 
 
-# Allowed expiration times
+
 EXPIRATION_OPTIONS = [5, 10, 20, 30, 60, 120, 240, 360]
 
 @app.before_request
@@ -29,11 +33,11 @@ def limit_request():
         return jsonify({"error": "Too Many Requests"}), 429
 
 
-@app.route("/")
+@app.route("/api")
 def home_page():
     return jsonify("endpoint reached")
 
-@app.route("/signin", methods=["POST"])
+@app.route("/api/signin", methods=["POST"])
 def sign_in():
     try:
         data = SignIn(**request.json) #retrieve client data and validate with pydantic
@@ -69,7 +73,7 @@ def sign_in():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/api/login", methods=["POST"])
 def login():
     data = SignIn(**request.json)
     username = data.username
@@ -105,7 +109,7 @@ def login():
 
 
 
-@app.route("/create", methods=["POST"])
+@app.route("/api/create", methods=["POST"])
 @jwt_required()
 def create_note():
     current_user = get_jwt_identity() #checks the header for a code to authenticate
@@ -120,7 +124,7 @@ def create_note():
         "expires_in": data.expiration
     })
 
-@app.route("/notes/<name>", methods=["GET"])
+@app.route("/api/notes/<name>", methods=["GET"])
 @jwt_required()
 
 def get_note(name):
@@ -132,7 +136,7 @@ def get_note(name):
     return jsonify({"note_name": name, "note_value": value, "expires_in": time_remaining})
 
 
-@app.route("/limit", methods=["GET"])
+@app.route("/api/limit", methods=["GET"])
 @jwt_required()
 def get_limit():
     current_user = get_jwt_identity()

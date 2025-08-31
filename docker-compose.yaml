@@ -1,8 +1,20 @@
 version: "3.9"
 
 services:
+  nginx:
+      build:
+        context: .
+        dockerfile: nginx/Dockerfile
+      container_name: nginx
+      ports:
+          - "80:80"
+      depends_on:
+          - app
+
   app:
-    image: takenote:latest
+    build:
+        context: .
+        dockerfile: app/Dockerfile
     container_name: app
     ports:
       - "8080:5000"
@@ -18,8 +30,10 @@ services:
       - "6379:6379"
 
   db:
-    image: my-postgres:1.0
-    container_name: postgres_server
+    build:
+        context: .
+        dockerfile: postgres/Dockerfile
+    container_name: postgres
     restart: always
     ports:
       - "5432:5432"
