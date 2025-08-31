@@ -47,3 +47,17 @@ services:
 
 volumes:
   pg-data:
+
+
+# In a production environment, you can use docker secrets
+
+# secrets:
+    # name of secret
+     # file:
+
+
+# mount at db service
+# secrets:
+    # - db_password
+
+# POSTGRES_PASSWORD: /run/secrets/db_password
