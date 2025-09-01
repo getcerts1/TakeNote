@@ -1,4 +1,4 @@
-TakeNotes – Lightweight Note-Taking Application
+TakeNotes – A Lightweight Note-Taking Application
 
 This application allows users to create and store notes in a cache with a preconfigured TTL (time-to-live). Notes automatically expire, keeping your workspace clean and clutter-free – perfect for users who want a simple, disposable note-taking experience.
 
@@ -34,7 +34,7 @@ cd repo
 ```
 
 3) Make sure you have docker-compose installed 
-4) Run the compose command to build the image and run in detatched mode
+4) Run the compose command to build the image and run in detached mode
 ```bash
 docker-compose --version
 docker-compose -f docker-compose.yaml up --build -d
@@ -47,7 +47,7 @@ Learning experience:
 This has been my most challenging project yet as it required
 the incorporation of many different skill sets and tools I have 
 previously only worked with individually. I had to combine my flask web application
-skills, psql command skills and more. This project took me a week to complete but I 
+skills, psql command skills and more. This project took me a week to complete, but I 
 spent most of it trying to get the nginx config file to work correctly and for the Javascript code
 to correctly fetch the flask API endpoints. 
 
@@ -56,7 +56,7 @@ Some of the things I have learnt in this journey include
 1) When using nginx as a reverse proxy to forward requests to your
 flask API, you need to use the service name when compiling everything using
 Docker compose. This is because nginx communicates with other services using the service name
-specified in the compose.
+specified in the Compose.
 
 2) I found a neat way to initialize database tables in Postgres. You simply
 create a Dockerfile pushing your init file whether it is a shell script or a
