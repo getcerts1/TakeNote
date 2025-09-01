@@ -5,14 +5,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <img src="logo.png" alt="App Logo" class="logo">
-        <h1>Login</h1>
-        <input type="text" id="login-username" placeholder="Username">
-        <input type="password" id="login-password" placeholder="Password">
-        <button onclick="login()">Login</button>
-        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    <img src="logo.png" alt="App Logo" class="logo">
+    <button class="logout-button" onclick="logout()">Log Out</button>
+    <h1>My Notes</h1>
+
+    <div class="section">
+        <textarea id="note-value" placeholder="Write your note..."></textarea>
+        <input type="text" id="note-name" placeholder="Note name">
+        <select id="note-expiration">
+            <option value="300">5 min</option>
+            <option value="600">10 min</option>
+            <option value="1200">20 min</option>
+            <option value="1800">30 min</option>
+            <option value="3600">1 hour</option>
+        </select>
+        <button onclick="createNote()">Save Note</button>
     </div>
-<script src="script.js"></script>
+
+    <div class="section">
+        <input type="text" id="fetch-note-name" placeholder="Enter note name to fetch">
+        <button onclick="getNote()">Get Note</button>
+        <div id="note-result"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

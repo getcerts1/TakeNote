@@ -1,32 +1,51 @@
 body {
     font-family: 'Georgia', serif;
-    background-color: #f8f1e5;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
     color: #4b3832;
-    text-align: center;
     margin: 0;
     padding: 0;
-}
-
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: #fff8f0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
 }
 
 h1 {
     color: #6f4e37;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
 }
 
-input, textarea, select, button {
-    width: 100%;
-    padding: 10px;
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid #c8ad7f;
+}
+
+.section {
+    background: rgba(255, 248, 240, 0.85);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 320px;
+}
+
+textarea, input, select, button {
+    width: 90%;
+    padding: 8px;
     margin: 8px 0;
     border-radius: 5px;
     border: 1px solid #c8ad7f;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    background: #fdf8f4;
 }
 
 button {
@@ -34,14 +53,18 @@ button {
     color: white;
     cursor: pointer;
     border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 button:hover {
     background: #8b5e3c;
 }
 
-.logo {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
+.logout-button {
+    padding: 6px 6px;
+    font-size: 13px;
+    background: #a97458;
+    width: 10%
 }

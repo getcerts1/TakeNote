@@ -6,12 +6,11 @@
     <link rel="stylesheet" href="app-styles.css">
 </head>
 <body>
-    <div class="container">
-        <img src="logo.png" alt="App Logo" class="logo">
-        <button onclick="logout()">Log Out</button>
-        <h1>My Notes</h1>
+    <img src="logo.png" alt="App Logo" class="logo">
+    <button class="logout-button" onclick="logout()">Log Out</button>
+    <h1>My Notes</h1>
 
-        <!-- Create Note -->
+    <div class="section">
         <textarea id="note-value" placeholder="Write your note..."></textarea>
         <input type="text" id="note-name" placeholder="Note name">
         <select id="note-expiration">
@@ -22,16 +21,15 @@
             <option value="3600">1 hour</option>
         </select>
         <button onclick="createNote()">Save Note</button>
+    </div>
 
-        <hr>
-
-        <!-- Retrieve Note -->
+    <div class="section">
         <input type="text" id="fetch-note-name" placeholder="Enter note name to fetch">
         <button onclick="getNote()">Get Note</button>
-
         <div id="note-result"></div>
     </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
