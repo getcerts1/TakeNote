@@ -71,6 +71,6 @@ functions to decode and encode and manually assigning secrets and algorithms for
 What is next?
 
 My goal is to now host this application on a production-grade managed cluster
-such as Azure and to make this application accessible for all users. This will require me 
+such as AKS and to make this application accessible for all users. This will require me 
 to leverage the tools necessary to host production-ready applications such as CI/CD, terraform, Docker registries, Kubernetes
 and monitoring tools such as Prometheus and Grafana.
