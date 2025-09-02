@@ -46,6 +46,7 @@ textarea, input, select, button {
     border: 1px solid #c8ad7f;
     font-size: 0.95rem;
     background: #fdf8f4;
+    font-family: 'Georgia', serif;
 }
 
 button {
@@ -67,4 +68,8 @@ button:hover {
     font-size: 13px;
     background: #a97458;
     width: 10%
+}
+
+.fetch-note-name, .note-value {
+    font-family: 'Georgia', serif;
 }

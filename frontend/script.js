@@ -14,7 +14,7 @@ window.signup = async function() {
     const data = await res.json();
     if (data.message) {
         alert('Sign up successful. Please login.');
-        window.location.href = '/'; // redirect to login
+        window.location.href = '/login'; // redirect to login
     } else {
         alert(data.error || 'Sign up failed');
     }
